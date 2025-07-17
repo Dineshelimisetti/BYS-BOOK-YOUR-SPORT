@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { submitBooking } from '../services/bookingService';
+import  bookingAPI  from '../services/bookingService';
 
 export default function BookingForm() {
   const [data, setData] = useState({
@@ -12,7 +12,7 @@ export default function BookingForm() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await submitBooking(data);
+      await bookingAPI.create(data);
       setMsg('🎉 Booking successful!');
       setData({name:'',regNo:'',course:'',section:'',email:'',eventName:'',time:'',seatNumber:''});
     } catch {

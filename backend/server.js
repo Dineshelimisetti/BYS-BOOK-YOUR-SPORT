@@ -21,7 +21,7 @@ app.use(express.json());
 // MongoDB Connection (cleaned for Mongoose v7+)
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ Connected to MongoDB Atlas'))
+  .then(() => console.log('✅ Connected to MongoDB Compass'))
   .catch((error) => console.error('❌ MongoDB connection error:', error));
 
 // Basic route
